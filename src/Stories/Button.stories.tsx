@@ -1,41 +1,37 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import * as React from 'react';
+import Button from '../Atoms/Buttons/Button'; 
 
-import { Button } from './Button';
+type TArgs = {
+    title: string;
+    event: () => void;
+    type: string;
+    size: string
+}
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof Button>;
+    title: 'Button',
+    component: Button,
+    args: {
+        event: () => window.alert('Alert')
+    }
+}
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+export const Primary = () => <Button title={'Primary'} event={() => window.alert('Primary')} type={'primary'} size={'medium'} />;
+export const Secondary = () => <Button title={'Secondary'} event={() => window.alert('Secondary')} type={'secondary'} size={'small'} />;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
+/* I prefer the current story naming but for future reference, the stories can be renamed as seen below! */
+// Primary.storyName = 'Button Primary';
+// Secondary.storyName = 'Button Secondary';
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
+const Template = (args: TArgs) => <Button {...args}/>
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
+export const ButtonControls = Template.bind({}) as any
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+ButtonControls.args = {
+    title: 'Button',
+    event: () => null,
+    type: 'secondary',
+    size: 'small'
+}
+
+ButtonControls.storyName = 'Button Controls'

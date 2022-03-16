@@ -1,4 +1,4 @@
-import Input from './Input';
+import Input from '../Atoms/Inputs/Input';
 
 export default {
     title: 'Form/Input',
