@@ -1,0 +1,35 @@
+@import url("../../../utils/Styles/colors.css");
+
+label {
+  font-size: 10px;
+  font-family: "system-ui";
+}
+
+input {
+    padding: 5px;
+    border-radius: 3px;
+    color: grey;
+    margin-top: 5px
+}
+
+input::placeholder {
+    color: rgb(180, 179, 179);
+}
+
+.input.primary {
+  border: 1px solid var(--primary-color);
+}
+
+.input.secondary {
+  border: 1px solid var(--secondary-color);
+}
+
+.label.primary {
+color: var(--primary-color);
+opacity: 0.8;
+}
+
+.label.secondary {
+color: var(--secondary-color);
+opacity: 0.8;
+}
