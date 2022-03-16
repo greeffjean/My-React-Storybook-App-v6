@@ -12,26 +12,23 @@ export default {
     title: 'Button',
     component: Button,
     args: {
-        event: () => window.alert('Alert')
+        size: 'medium',
     }
 }
 
-export const Primary = () => <Button title={'Primary'} event={() => window.alert('Primary')} type={'primary'} size={'medium'} />;
-export const Secondary = () => <Button title={'Secondary'} event={() => window.alert('Secondary')} type={'secondary'} size={'small'} />;
-
-/* I prefer the current story naming but for future reference, the stories can be renamed as seen below! */
-// Primary.storyName = 'Button Primary';
-// Secondary.storyName = 'Button Secondary';
-
 const Template = (args: TArgs) => <Button {...args}/>
 
-export const ButtonControls = Template.bind({}) as any
+export const Primary = Template.bind({}) as any
+export const Secondary = Template.bind({}) as any
 
-ButtonControls.args = {
-    title: 'Button',
-    event: () => null,
-    type: 'secondary',
-    size: 'small'
+Primary.args = {
+    title: 'Primary',
+    event: () => window.alert('Primary'),
+    type: 'primary'
+}
+Secondary.args = {
+    title: 'Secondary',
+    event: () => window.alert('Secondary'),
+    type: 'secondary'
 }
 
-ButtonControls.storyName = 'Button Controls'
