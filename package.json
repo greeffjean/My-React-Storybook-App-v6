@@ -56,6 +56,8 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-console": "^1.2.3",
+    "@storybook/addon-docs": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
@@ -65,7 +67,6 @@
     "@storybook/preset-create-react-app": "^4.0.1",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
-    "webpack": "^5.70.0",
-    "@storybook/addon-docs": "^6.4.19"
+    "webpack": "^5.70.0"
   }
 }

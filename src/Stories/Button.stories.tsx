@@ -20,6 +20,7 @@ const Template = (args: TArgs) => <Button {...args}/>
 
 export const Primary = Template.bind({}) as any
 export const Secondary = Template.bind({}) as any
+export const Log = Template.bind({}) as any
 
 Primary.args = {
     title: 'Primary',
@@ -29,6 +30,11 @@ Primary.args = {
 Secondary.args = {
     title: 'Secondary',
     event: () => window.alert('Secondary'),
+    type: 'secondary'
+}
+Log.args = {
+    title: 'Secondary',
+    event: () => console.log("clicked!"),
     type: 'secondary'
 }
 
