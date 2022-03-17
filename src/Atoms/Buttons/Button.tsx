@@ -5,12 +5,13 @@ type TProps = {
     title: string;
     event: () => void;
     type: string;
-    size: string
+    size: string;
+    disabled? : boolean;
 }
 
-const Button: React.FC<TProps> = ({ title, event, type, size }) => {
+const Button: React.FC<TProps> = ({ title, event, type, size, disabled }) => {
     return (<>
-        <button className={`button ${type} ${size}`} onClick={() => event()}>
+        <button disabled={disabled} className={`button ${type} ${size}`} onClick={() => event()}>
             {title}
         </button>
     </>);
