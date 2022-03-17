@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Button from '../Atoms/Buttons/Button'; 
+import Button from '../Atoms/Buttons/Button';
 import { text, boolean } from '@storybook/addon-knobs';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 type TArgs = {
     title: string;
@@ -12,18 +13,18 @@ type TArgs = {
 
 export default {
     title: 'Button',
-    component: Button,
+    component: Button as ComponentMeta<typeof Button>,
     args: {
         size: 'medium',
     }
 }
 
-const Template = (args: TArgs) => <Button {...args}/>
+const Template: ComponentStory<typeof Button> = (args: TArgs) => <Button {...args} />
 
-export const Primary = Template.bind({}) as any
-export const Secondary = Template.bind({}) as any
-export const Log = Template.bind({}) as any
-export const Knob = Template.bind({}) as any
+export const Primary = Template.bind({});
+export const Secondary = Template.bind({});
+export const Log = Template.bind({});
+export const Knob = Template.bind({});
 
 Primary.args = {
     title: 'Primary',
@@ -42,8 +43,16 @@ Log.args = {
 }
 Knob.args = {
     title: text('Label', 'Knob Button'),
-    event: () => console.log("clicked!"),
+    event: () => console.log("clicked!", process.env.STORYBOOK_THEME),
     type: 'secondary',
     disabled: boolean('Disabled', false)
 }
+
+// Components for reuse in Storybook
+export const ButtonPrimary = () => <Button
+    event={() => { }}
+    size="medium"
+    title="Primary Button"
+    type="primary"
+/>
 

@@ -14,7 +14,7 @@ export const Subscription = () => {
             <Input.Number/>
             <br/>
             <br/>
-            <Button.Secondary />
+            <Button.ButtonPrimary />
         </form>
     )
 }
